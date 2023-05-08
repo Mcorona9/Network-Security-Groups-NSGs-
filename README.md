@@ -1,4 +1,4 @@
-# Network Security Groups (NSGs) and Inspecting Network Protocols
+
 <p align="center">
 <img src="https://i.imgur.com/Ua7udoS.png" alt="Traffic Examination"/>
 </p>
@@ -43,17 +43,50 @@ After successfully creating the the two VM's we can utilize the Network watcher 
 <br />
 
 <p>
-<img src="https://i.imgur.com/RmFGx2v.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/2VKzwU3.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-The third step will consist of making a few selections for that VM such as choosing windows version type as well as choosing it's memory size. 
+In the third step we are going be remote connecting into the VM1 and from within we will be installing Wireshark(Network Protocal Analyzer) for the purpose of viewing network traffic between the two virtual machines.
 </p>
 <br />
 
 <p>
-<img src="https://i.imgur.com/EbEKisL.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+<img src="https://i.imgur.com/2RtuDIk.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Finally after successfully choosing and creating the VM's specifictaions the VM should be up and running in Azure, the image above is an example of a running virtual machine. Creating a VM in Azure is a good way to get some practice on essentially "building" a computer in the cloud and creating tasks or running multiple environments from one place.
+The image above reperesents Wireshark already installed into the VM1 and we could already see activity withing itself. 
 </p>
 <br />
+
+<p>
+<img src="https://i.imgur.com/5WrdQTY.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Now we will go ahead and copy the private ip adress from VM2 in oder to ping it from within VM1 utilizing Powershell. The image above shows the traffic from the two virtual machines after pinging the VM. We can see two different IP address interacting with one another.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/q6bIGkq.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+On this section we initialized the forever ping by inputing the private ip adress from VM2 and using commadn - t and the purpose for this is because now we will be changing some settings in the VM2's firewall to essentially not allow any more traffic from imcp whih is the protocol that ping uses in we will not block the incoming traffic.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/pt0dQSA.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+After making some changes to the firewalls settings in VM2 we can already see the none stop ping from VM1 comming to a stop as it is now being blocked off.
+</p>
+<br />
+
+<p>
+<img src="https://i.imgur.com/2dmPV0d.png" height="80%" width="80%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+Here we will longing to vm2 from vm1 using SSH command in powershell.
+</p>
+<br />
+
